@@ -4,6 +4,7 @@
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const form = document.getElementById('booking-form');
+  const wa = 'https://wa.me/923374800486';
 
   const onScroll = () => { if (header) header.classList.toggle('is-scrolled', window.scrollY > 40); };
   onScroll();
@@ -47,7 +48,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const lines = [
-        'Hello Dr Davidoff Dental Surgeon,',
+        'Assalam o Alaikum Bright Smile Dental Aesthetics,',
         'I would like to book an appointment.',
         '',
         `Name: ${String(data.get('name') || '').trim()}`,
@@ -56,8 +57,7 @@
         data.get('date') ? `Preferred date: ${data.get('date')}` : '',
         data.get('message') ? `Notes: ${data.get('message')}` : '',
       ].filter(Boolean).join('\n');
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lines).catch(() => {});
-      window.location.href = 'tel:+61247823021';
+      window.location.href = wa + '?text=' + encodeURIComponent(lines);
       const success = document.getElementById('form-success');
       if (success) success.classList.add('is-visible');
       form.reset();
