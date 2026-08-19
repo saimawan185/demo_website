@@ -56,7 +56,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const lines = [
-        'Hello Dentalogix,',
+        'Hello Australian Dental Centre,',
         'I would like to book an appointment.',
         '',
         `Name: ${String(data.get('name') || '').trim()}`,
@@ -69,7 +69,7 @@
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(lines).catch(() => {});
       }
-      window.open('https://ig.me/m/dentalogix', '_blank');
+      window.location.href = 'tel:+61733694097';
       const success = document.getElementById('form-success');
       if (success) success.classList.add('is-visible');
       form.reset();
