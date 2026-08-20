@@ -4,26 +4,35 @@
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const form = document.getElementById('booking-form');
-  const wa = 'https://wa.me/923374800486';
+  const waBase = 'https://wa.me/923060622223';
 
-  const onScroll = () => { if (header) header.classList.toggle('is-scrolled', window.scrollY > 40); };
+  const onScroll = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 36);
+  };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  const closeNav = () => {
+    if (!toggle || !navLinks) return;
+    toggle.classList.remove('is-open');
+    navLinks.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open');
+  };
+
   if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const open = toggle.classList.toggle('is-open');
       navLinks.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.style.overflow = open ? 'hidden' : '';
+      document.body.classList.toggle('nav-open', open);
     });
     navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('is-open');
-        navLinks.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+      link.addEventListener('click', closeNav);
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
     });
   }
 
@@ -31,11 +40,16 @@
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach((el) => io.observe(el));
-  } else reveals.forEach((el) => el.classList.add('is-in'));
+  } else {
+    reveals.forEach((el) => el.classList.add('is-in'));
+  }
 
   const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const today = dayMap[new Date().getDay()];
@@ -48,7 +62,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const lines = [
-        'Assalam o Alaikum Bright Smile Dental Aesthetics,',
+        'Assalam o Alaikum Next Care Dental Clinic,',
         'I would like to book an appointment.',
         '',
         `Name: ${String(data.get('name') || '').trim()}`,
@@ -57,7 +71,7 @@
         data.get('date') ? `Preferred date: ${data.get('date')}` : '',
         data.get('message') ? `Notes: ${data.get('message')}` : '',
       ].filter(Boolean).join('\n');
-      window.location.href = wa + '?text=' + encodeURIComponent(lines);
+      window.location.href = waBase + '?text=' + encodeURIComponent(lines);
       const success = document.getElementById('form-success');
       if (success) success.classList.add('is-visible');
       form.reset();
@@ -65,5 +79,5 @@
   }
 
   const year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+  if (year) year.textContent = String(new Date().getFullYear());
 })();
