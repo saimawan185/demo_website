@@ -1,7 +1,7 @@
 (function () {
   'use strict';
   var burger = document.querySelector('.burger');
-  var menu = document.querySelector('.menu');
+  var menu = document.querySelector('.nav');
   var form = document.getElementById('booking-form');
   var wa = 'https://wa.me/923010888957';
 
@@ -35,7 +35,7 @@
     if (row.getAttribute('data-day') === today) row.classList.add('today');
   });
 
-  var nodes = document.querySelectorAll('.in');
+  var nodes = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
