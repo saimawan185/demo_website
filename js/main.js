@@ -1,81 +1,76 @@
 (function () {
   'use strict';
-  const header = document.querySelector('.site-header');
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const form = document.getElementById('booking-form');
-  const waBase = 'https://wa.me/923010888957';
+  var burger = document.querySelector('.burger');
+  var menu = document.querySelector('.menu');
+  var form = document.getElementById('booking-form');
+  var wa = 'https://wa.me/923010888957';
 
-  const onScroll = () => {
-    if (header) header.classList.toggle('is-scrolled', window.scrollY > 36);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  function closeMenu() {
+    if (!burger || !menu) return;
+    burger.classList.remove('on');
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('lock');
+  }
 
-  const closeNav = () => {
-    if (!toggle || !navLinks) return;
-    toggle.classList.remove('is-open');
-    navLinks.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('nav-open');
-  };
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', (e) => {
+  if (burger && menu) {
+    burger.addEventListener('click', function (e) {
       e.stopPropagation();
-      const open = toggle.classList.toggle('is-open');
-      navLinks.classList.toggle('is-open', open);
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      document.body.classList.toggle('nav-open', open);
+      var open = burger.classList.toggle('on');
+      menu.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('lock', open);
     });
-    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNav();
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 
-  const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach((el) => io.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('is-in'));
-  }
-
-  const dayMap = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const today = dayMap[new Date().getDay()];
-  document.querySelectorAll('.hours-table tr[data-day]').forEach((row) => {
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var today = days[new Date().getDay()];
+  document.querySelectorAll('.hours tr[data-day]').forEach(function (row) {
     if (row.getAttribute('data-day') === today) row.classList.add('today');
   });
 
+  var nodes = document.querySelectorAll('.in');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    nodes.forEach(function (el) { io.observe(el); });
+  } else {
+    nodes.forEach(function (el) { el.classList.add('show'); });
+  }
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const data = new FormData(form);
-      const lines = [
+      var data = new FormData(form);
+      var msg = [
         'Assalam o Alaikum The Dental Specialists,',
         'I would like to book an appointment.',
         '',
-        `Name: ${String(data.get('name') || '').trim()}`,
-        `Phone: ${String(data.get('phone') || '').trim()}`,
-        `Service: ${String(data.get('service') || '').trim()}`,
-        data.get('date') ? `Preferred date: ${data.get('date')}` : '',
-        data.get('message') ? `Notes: ${data.get('message')}` : '',
+        'Name: ' + String(data.get('name') || '').trim(),
+        'Phone: ' + String(data.get('phone') || '').trim(),
+        'Service: ' + String(data.get('service') || '').trim(),
+        data.get('date') ? 'Preferred date: ' + data.get('date') : '',
+        data.get('message') ? 'Notes: ' + data.get('message') : ''
       ].filter(Boolean).join('\n');
-      window.location.href = waBase + '?text=' + encodeURIComponent(lines);
-      const success = document.getElementById('form-success');
-      if (success) success.classList.add('is-visible');
+      window.location.href = wa + '?text=' + encodeURIComponent(msg);
+      var ok = document.getElementById('form-ok');
+      if (ok) ok.classList.add('show');
       form.reset();
     });
   }
 
-  const year = document.getElementById('year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  var y = document.getElementById('year');
+  if (y) y.textContent = String(new Date().getFullYear());
 })();
