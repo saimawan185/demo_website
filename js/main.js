@@ -4,7 +4,7 @@
   const toggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const form = document.getElementById('booking-form');
-  const waBase = 'https://wa.me/923060622223';
+  const waBase = 'https://wa.me/923010888957';
 
   const onScroll = () => {
     if (header) header.classList.toggle('is-scrolled', window.scrollY > 36);
@@ -28,9 +28,7 @@
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('nav-open', open);
     });
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', closeNav);
-    });
+    navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeNav();
     });
@@ -62,7 +60,7 @@
       e.preventDefault();
       const data = new FormData(form);
       const lines = [
-        'Assalam o Alaikum Next Care Dental Clinic,',
+        'Assalam o Alaikum The Dental Specialists,',
         'I would like to book an appointment.',
         '',
         `Name: ${String(data.get('name') || '').trim()}`,
