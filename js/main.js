@@ -3,7 +3,7 @@
   var burger = document.querySelector('.burger');
   var menu = document.querySelector('.nav');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923010888957';
+  var wa = 'https://wa.me/923454114240';
 
   function closeMenu() {
     if (!burger || !menu) return;
@@ -55,7 +55,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum The Dental Specialists,',
+        'Assalam o Alaikum Dental House,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),

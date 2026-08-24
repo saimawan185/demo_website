@@ -91,6 +91,46 @@ button { cursor: pointer; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 .mt { margin-top: 1.5rem; }
 
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+.social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  transition: transform 0.3s var(--ease), border-color 0.2s ease, color 0.2s ease;
+}
+.social:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--accent-deep);
+}
+.social svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+.social-ig { border-color: rgba(193, 53, 132, 0.25); }
+.social-ig:hover { color: #c13584; border-color: #c13584; }
+.social-fb { border-color: rgba(24, 119, 242, 0.25); }
+.social-fb:hover { color: #1877f2; border-color: #1877f2; }
+.social-wa { border-color: rgba(37, 211, 102, 0.35); color: #128c7e; }
+.social-wa:hover { color: #075e54; border-color: var(--wa); }
+.site-foot .social {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+}
+.site-foot .social:hover { color: #fff; border-color: #fff; }
+
 /* Top strip */
 .topbar {
   background: var(--accent);
