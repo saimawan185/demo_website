@@ -219,9 +219,9 @@ button { cursor: pointer; }
 /* Hero */
 .hero {
   position: relative;
-  min-height: min(92svh, 860px);
+  min-height: min(78svh, 720px);
   display: grid;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   color: #fff;
 }
@@ -252,7 +252,7 @@ button { cursor: pointer; }
 .hero-copy {
   position: relative;
   z-index: 1;
-  padding: 5.5rem 0 4.5rem;
+  padding: 2.5rem 0 3rem;
   max-width: 38rem;
   animation: rise 0.9s var(--ease) both;
 }
@@ -677,8 +677,8 @@ button { cursor: pointer; }
 }
 
 @media (max-width: 640px) {
-  .hero { min-height: 88svh; }
-  .hero-copy { padding: 4rem 0 3.25rem; }
+  .hero { min-height: 72svh; }
+  .hero-copy { padding: 2rem 0 2.5rem; }
   .topbar .wrap { flex-direction: column; align-items: flex-start; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-grid figure:nth-child(n) { grid-column: span 1; }
