@@ -2,8 +2,23 @@
   'use strict';
   var burger = document.querySelector('.burger');
   var menu = document.querySelector('.nav');
+  var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
   var wa = 'https://wa.me/923214488421';
+  var mq = window.matchMedia('(max-width: 960px)');
+
+  /* Keep mobile menu on <body> so sticky header filters cannot clip it */
+  function placeNav() {
+    if (!menu) return;
+    if (mq.matches) {
+      if (menu.parentElement !== document.body) {
+        document.body.appendChild(menu);
+      }
+    } else if (row && menu.parentElement !== row) {
+      closeMenu();
+      row.appendChild(menu);
+    }
+  }
 
   function closeMenu() {
     if (!burger || !menu) return;
@@ -14,16 +29,28 @@
   }
 
   if (burger && menu) {
+    placeNav();
+    if (mq.addEventListener) {
+      mq.addEventListener('change', placeNav);
+    } else if (mq.addListener) {
+      mq.addListener(placeNav);
+    }
+
     burger.addEventListener('click', function (e) {
+      e.preventDefault();
       e.stopPropagation();
-      var open = burger.classList.toggle('on');
+      placeNav();
+      var open = !menu.classList.contains('open');
+      burger.classList.toggle('on', open);
       menu.classList.toggle('open', open);
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('lock', open);
     });
+
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', closeMenu);
     });
+
     window.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeMenu();
     });
@@ -31,8 +58,8 @@
 
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   var today = days[new Date().getDay()];
-  document.querySelectorAll('.hours tr[data-day]').forEach(function (row) {
-    if (row.getAttribute('data-day') === today) row.classList.add('today');
+  document.querySelectorAll('.hours tr[data-day]').forEach(function (rowEl) {
+    if (rowEl.getAttribute('data-day') === today) rowEl.classList.add('today');
   });
 
   var nodes = document.querySelectorAll('.reveal');
