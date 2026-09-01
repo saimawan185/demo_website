@@ -585,7 +585,7 @@ button { cursor: pointer; }
   background: #2a2622;
   color: rgba(255, 255, 255, 0.78);
   padding: 3.5rem 0 1.5rem;
-  margin-top: 2rem;
+  margin-top: 0;
 }
 .site-foot .brand strong { color: #fff; }
 .site-foot .brand span { color: #d4b896; }
