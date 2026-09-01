@@ -4,10 +4,9 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923214488421';
+  var wa = 'https://wa.me/923003643768';
   var mq = window.matchMedia('(max-width: 960px)');
 
-  /* Keep mobile menu on <body> so sticky header filters cannot clip it */
   function placeNav() {
     if (!menu) return;
     if (mq.matches) {
@@ -82,8 +81,8 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Waqas Medical and Dental Clinic,',
-        'I would like to book an appointment.',
+        'Assalam o Alaikum Ivory Dental Clinic,',
+        'I would like to book an appointment with Dr Nomair.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
         'Phone: ' + String(data.get('phone') || '').trim(),

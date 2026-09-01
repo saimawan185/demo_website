@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 :root {
-  --snow: #f3f8fa;
-  --white: #ffffff;
-  --mist: #e4eef2;
-  --ink: #0c3b4a;
-  --ink-soft: #3d5f6c;
-  --mute: #6a8792;
-  --line: rgba(12, 59, 74, 0.12);
-  --accent: #1a8f9c;
-  --accent-deep: #0f6d78;
-  --accent-soft: #d8f0f3;
+  --snow: #faf7f2;
+  --white: #fffefb;
+  --mist: #efe8dc;
+  --ink: #2a2622;
+  --ink-soft: #5c554c;
+  --mute: #8a8278;
+  --line: rgba(42, 38, 34, 0.1);
+  --accent: #b8956a;
+  --accent-deep: #96784f;
+  --accent-soft: #f3ebe0;
   --wa: #25d366;
   --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Manrope', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 4.25rem;
 }
@@ -23,9 +23,9 @@ html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(26, 143, 156, 0.12), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, rgba(180, 210, 220, 0.35), transparent 50%),
-    linear-gradient(180deg, #eef5f7 0%, var(--snow) 28%, var(--snow) 100%);
+    radial-gradient(1100px 520px at 8% -8%, rgba(184, 149, 106, 0.14), transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, rgba(239, 232, 220, 0.9), transparent 50%),
+    linear-gradient(180deg, #f5efe6 0%, var(--snow) 30%, var(--snow) 100%);
   background-attachment: fixed;
   color: var(--ink);
   line-height: 1.6;
@@ -153,7 +153,7 @@ button { cursor: pointer; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #f3f8fa;
+  background: rgba(250, 247, 242, 0.94);
   border-bottom: 1px solid var(--line);
 }
 .site-head-row {
@@ -250,8 +250,8 @@ button { cursor: pointer; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(8, 40, 52, 0.78) 0%, rgba(8, 40, 52, 0.45) 48%, rgba(8, 40, 52, 0.2) 100%),
-    linear-gradient(0deg, rgba(8, 40, 52, 0.55) 0%, transparent 45%);
+    linear-gradient(105deg, rgba(30, 26, 22, 0.82) 0%, rgba(30, 26, 22, 0.5) 50%, rgba(30, 26, 22, 0.25) 100%),
+    linear-gradient(0deg, rgba(30, 26, 22, 0.55) 0%, transparent 45%);
 }
 @keyframes drift {
   from { transform: scale(1.04) translate3d(0, 0, 0); }
@@ -276,7 +276,7 @@ button { cursor: pointer; }
   font-style: italic;
   font-weight: 500;
   font-size: 0.85em;
-  color: rgba(216, 240, 243, 0.95);
+  color: rgba(243, 235, 224, 0.95);
   margin-top: 0.15rem;
 }
 .hero h1 {
@@ -450,7 +450,7 @@ button { cursor: pointer; }
   overflow: hidden;
   padding: 4.5rem 0;
   background:
-    linear-gradient(120deg, #0f5f6a 0%, #1a8f9c 55%, #2aa8b5 100%);
+    linear-gradient(120deg, #3d342c 0%, #5c4a38 55%, #7a6348 100%);
   color: #fff;
 }
 .cta-band .eyebrow { color: rgba(255, 255, 255, 0.75); }
@@ -582,13 +582,13 @@ button { cursor: pointer; }
 }
 
 .site-foot {
-  background: #0c3b4a;
+  background: #2a2622;
   color: rgba(255, 255, 255, 0.78);
   padding: 3.5rem 0 1.5rem;
   margin-top: 2rem;
 }
 .site-foot .brand strong { color: #fff; }
-.site-foot .brand span { color: #9fd4db; }
+.site-foot .brand span { color: #d4b896; }
 .foot-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -600,7 +600,7 @@ button { cursor: pointer; }
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #9fd4db;
+  color: #d4b896;
   margin-bottom: 0.85rem;
 }
 .foot-grid a:hover { color: #fff; }
@@ -666,7 +666,7 @@ button { cursor: pointer; }
     margin: 0;
     z-index: 110;
     box-sizing: border-box;
-    background: #f3f8fa;
+    background: #faf7f2;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
