@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Outfit:wght@400;500;600;700&display=swap');
 
 :root {
-  --snow: #faf7f2;
-  --white: #fffefb;
-  --mist: #efe8dc;
-  --ink: #2a2622;
-  --ink-soft: #5c554c;
-  --mute: #8a8278;
-  --line: rgba(42, 38, 34, 0.1);
-  --accent: #b8956a;
-  --accent-deep: #96784f;
-  --accent-soft: #f3ebe0;
+  --snow: #f4faf8;
+  --white: #ffffff;
+  --mist: #e3f0ec;
+  --ink: #14352f;
+  --ink-soft: #3d5c55;
+  --mute: #6f8a83;
+  --line: rgba(20, 53, 47, 0.1);
+  --accent: #2a9d8f;
+  --accent-deep: #1d7a6f;
+  --accent-soft: #d8f0eb;
   --wa: #25d366;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 4.25rem;
 }
@@ -23,9 +23,9 @@ html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(1100px 520px at 8% -8%, rgba(184, 149, 106, 0.14), transparent 55%),
-    radial-gradient(800px 480px at 100% 0%, rgba(239, 232, 220, 0.9), transparent 50%),
-    linear-gradient(180deg, #f5efe6 0%, var(--snow) 30%, var(--snow) 100%);
+    radial-gradient(1100px 520px at 8% -8%, rgba(42, 157, 143, 0.12), transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, rgba(227, 240, 236, 0.9), transparent 50%),
+    linear-gradient(180deg, #eaf6f3 0%, var(--snow) 30%, var(--snow) 100%);
   background-attachment: fixed;
   color: var(--ink);
   line-height: 1.6;
@@ -153,7 +153,7 @@ button { cursor: pointer; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 247, 242, 0.94);
+  background: rgba(244, 250, 248, 0.94);
   border-bottom: 1px solid var(--line);
 }
 .site-head-row {
@@ -250,8 +250,8 @@ button { cursor: pointer; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(30, 26, 22, 0.82) 0%, rgba(30, 26, 22, 0.5) 50%, rgba(30, 26, 22, 0.25) 100%),
-    linear-gradient(0deg, rgba(30, 26, 22, 0.55) 0%, transparent 45%);
+    linear-gradient(105deg, rgba(12, 40, 36, 0.82) 0%, rgba(12, 40, 36, 0.5) 50%, rgba(12, 40, 36, 0.25) 100%),
+    linear-gradient(0deg, rgba(12, 40, 36, 0.55) 0%, transparent 45%);
 }
 @keyframes drift {
   from { transform: scale(1.04) translate3d(0, 0, 0); }
@@ -276,7 +276,7 @@ button { cursor: pointer; }
   font-style: italic;
   font-weight: 500;
   font-size: 0.85em;
-  color: rgba(243, 235, 224, 0.95);
+  color: rgba(216, 240, 235, 0.95);
   margin-top: 0.15rem;
 }
 .hero h1 {
@@ -450,7 +450,7 @@ button { cursor: pointer; }
   overflow: hidden;
   padding: 4.5rem 0;
   background:
-    linear-gradient(120deg, #3d342c 0%, #5c4a38 55%, #7a6348 100%);
+    linear-gradient(120deg, #0f3d38 0%, #1d7a6f 55%, #2a9d8f 100%);
   color: #fff;
 }
 .cta-band .eyebrow { color: rgba(255, 255, 255, 0.75); }
@@ -582,13 +582,13 @@ button { cursor: pointer; }
 }
 
 .site-foot {
-  background: #2a2622;
+  background: #14352f;
   color: rgba(255, 255, 255, 0.78);
   padding: 3.5rem 0 1.5rem;
   margin-top: 0;
 }
 .site-foot .brand strong { color: #fff; }
-.site-foot .brand span { color: #d4b896; }
+.site-foot .brand span { color: #8fd4c8; }
 .foot-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
@@ -600,7 +600,7 @@ button { cursor: pointer; }
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #d4b896;
+  color: #8fd4c8;
   margin-bottom: 0.85rem;
 }
 .foot-grid a:hover { color: #fff; }
@@ -666,7 +666,7 @@ button { cursor: pointer; }
     margin: 0;
     z-index: 110;
     box-sizing: border-box;
-    background: #faf7f2;
+    background: #f4faf8;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;

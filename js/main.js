@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923003643768';
+  var wa = 'https://wa.me/923353368478';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -81,8 +81,8 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Ivory Dental Clinic,',
-        'I would like to book an appointment with Dr Nomair.',
+        'Assalam o Alaikum Smile Space Dental Clinic,',
+        'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
         'Phone: ' + String(data.get('phone') || '').trim(),
