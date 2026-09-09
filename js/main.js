@@ -99,4 +99,36 @@
 
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
+
+  /* Hero image carousel */
+  var slides = document.querySelectorAll('.hero-slide');
+  var dotsWrap = document.getElementById('hero-dots');
+  if (slides.length > 1 && dotsWrap) {
+    var index = 0;
+    var timer;
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Show image ' + (i + 1));
+      if (i === 0) dot.classList.add('is-active');
+      dot.addEventListener('click', function () { goTo(i); restart(); });
+      dotsWrap.appendChild(dot);
+    });
+    var dots = dotsWrap.querySelectorAll('button');
+
+    function goTo(n) {
+      slides[index].classList.remove('is-active');
+      dots[index].classList.remove('is-active');
+      index = (n + slides.length) % slides.length;
+      slides[index].classList.add('is-active');
+      dots[index].classList.add('is-active');
+    }
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () { goTo(index + 1); }, 4500);
+    }
+
+    restart();
+  }
 })();
