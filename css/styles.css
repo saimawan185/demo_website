@@ -283,6 +283,12 @@ button { cursor: pointer; }
 .nav a:hover,
 .nav a.active { color: var(--ink); }
 .nav .btn { margin-left: 0.35rem; }
+.nav .btn-primary,
+.nav .btn-primary:hover,
+.nav .btn-primary:focus,
+.nav .btn-primary:active {
+  color: #fff;
+}
 
 .burger {
   display: none;
@@ -808,6 +814,10 @@ button { cursor: pointer; }
     margin: 1.35rem 0 0;
     width: 100%;
     flex-shrink: 0;
+  }
+  .nav .btn-primary {
+    color: #fff;
+    border-bottom: none;
   }
   .service-row {
     grid-template-columns: 2.5rem 1fr;
