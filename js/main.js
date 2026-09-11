@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923088797935';
+  var wa = 'https://wa.me/923435188647';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -81,7 +81,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Dr Maryam Gul Mehsood Clinic,',
+        'Assalam o Alaikum Dr Saniya Sohail,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
@@ -100,7 +100,6 @@
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
 
-  /* Hero image carousel */
   var slides = document.querySelectorAll('.hero-slide');
   var dotsWrap = document.getElementById('hero-dots');
   if (slides.length > 1 && dotsWrap) {
