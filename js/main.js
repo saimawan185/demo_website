@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923435188647';
+  var wa = 'https://wa.me/923111222398';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -81,7 +81,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Dr Saniya Sohail,',
+        'Assalam o Alaikum HUSWA Dental Care,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
