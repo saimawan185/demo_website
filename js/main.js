@@ -4,15 +4,13 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/922138183435';
+  var wa = 'https://wa.me/923215578653';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
     if (!menu) return;
     if (mq.matches) {
-      if (menu.parentElement !== document.body) {
-        document.body.appendChild(menu);
-      }
+      if (menu.parentElement !== document.body) document.body.appendChild(menu);
     } else if (row && menu.parentElement !== row) {
       closeMenu();
       row.appendChild(menu);
@@ -29,11 +27,8 @@
 
   if (burger && menu) {
     placeNav();
-    if (mq.addEventListener) {
-      mq.addEventListener('change', placeNav);
-    } else if (mq.addListener) {
-      mq.addListener(placeNav);
-    }
+    if (mq.addEventListener) mq.addEventListener('change', placeNav);
+    else if (mq.addListener) mq.addListener(placeNav);
 
     burger.addEventListener('click', function (e) {
       e.preventDefault();
@@ -81,7 +76,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Hadiqa Dental Clinic,',
+        'Assalam o Alaikum Omeir Dental Clinic,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
