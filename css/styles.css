@@ -129,27 +129,116 @@ button { cursor: pointer; border: 0; background: none; }
 .social-call { border-color: rgba(168, 84, 106, 0.35); color: var(--accent) !important; }
 .social-call:hover { background: var(--accent); color: #fff !important; border-color: var(--accent); }
 
-.loc-copy .social,
-.site-foot .social {
+.loc-copy .social {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.35);
   color: #fff !important;
 }
-.loc-copy .social:hover,
-.site-foot .social:hover {
+.loc-copy .social:hover {
   color: #fff !important;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
-.loc-copy .social-wa:hover,
-.site-foot .social-wa:hover { background: #25d366; border-color: #25d366; }
-.loc-copy .social-fb:hover,
-.site-foot .social-fb:hover { background: #1877f2; border-color: #1877f2; }
-.loc-copy .social-ig:hover,
-.site-foot .social-ig:hover { background: #c13584; border-color: #c13584; }
-.loc-copy .social-g:hover,
-.site-foot .social-g:hover { background: #ea4335; border-color: #ea4335; }
-.loc-copy .social-call:hover,
-.site-foot .social-call:hover { background: var(--accent); border-color: var(--accent); }
+.loc-copy .social-wa:hover { background: #25d366; border-color: #25d366; }
+.loc-copy .social-fb:hover { background: #1877f2; border-color: #1877f2; }
+.loc-copy .social-ig:hover { background: #c13584; border-color: #c13584; }
+.loc-copy .social-g:hover { background: #ea4335; border-color: #ea4335; }
+.loc-copy .social-call:hover { background: var(--accent); border-color: var(--accent); }
+
+.site-foot .foot-connect { margin-top: 1.4rem; }
+.site-foot .foot-connect-title {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f0b8c4;
+  margin-bottom: 0.9rem;
+  font-weight: 700;
+}
+.site-foot .socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0;
+}
+.site-foot .social {
+  position: relative;
+  width: 2.9rem;
+  height: 2.9rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  overflow: visible;
+}
+.site-foot .social svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+.site-foot .social .label {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.65rem);
+  transform: translateX(-50%) translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.25s ease, transform 0.25s var(--ease);
+}
+.site-foot .social .label::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #fff;
+}
+.site-foot .social:hover {
+  transform: translateY(-5px) scale(1.08);
+  color: #fff !important;
+}
+.site-foot .social:hover .label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.site-foot .social-wa {
+  background: linear-gradient(145deg, #2fe074, #1ebe57);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+.site-foot .social-wa:hover { box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5); }
+.site-foot .social-fb {
+  background: linear-gradient(145deg, #3b8cff, #1877f2);
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.35);
+}
+.site-foot .social-fb:hover { box-shadow: 0 12px 28px rgba(24, 119, 242, 0.5); }
+.site-foot .social-ig {
+  background: linear-gradient(135deg, #f58529, #dd2a7b 45%, #8134af);
+  box-shadow: 0 8px 20px rgba(193, 53, 132, 0.35);
+}
+.site-foot .social-ig:hover { box-shadow: 0 12px 28px rgba(193, 53, 132, 0.5); }
+.site-foot .social-g {
+  background: linear-gradient(145deg, #ff6b5b, #ea4335);
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.35);
+}
+.site-foot .social-g:hover { box-shadow: 0 12px 28px rgba(234, 67, 53, 0.5); }
+.site-foot .social-call {
+  background: linear-gradient(145deg, #c46b7e, #a8546a);
+  box-shadow: 0 8px 20px rgba(168, 84, 106, 0.35);
+}
+.site-foot .social-call:hover { box-shadow: 0 12px 28px rgba(168, 84, 106, 0.5); }
 
 .topbar {
   background: var(--ink);
