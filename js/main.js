@@ -98,6 +98,13 @@
   var slides = document.querySelectorAll('.hero-slide');
   var dotsWrap = document.getElementById('hero-dots');
   if (slides.length > 1 && dotsWrap) {
+    slides.forEach(function (slide) {
+      var img = slide.querySelector('img');
+      if (img && img.src) {
+        var pre = new Image();
+        pre.src = img.src;
+      }
+    });
     var index = 0;
     var timer;
     slides.forEach(function (_, i) {
@@ -120,7 +127,7 @@
 
     function restart() {
       clearInterval(timer);
-      timer = setInterval(function () { goTo(index + 1); }, 4500);
+      timer = setInterval(function () { goTo(index + 1); }, 2800);
     }
 
     restart();
