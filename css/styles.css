@@ -98,51 +98,64 @@ button { cursor: pointer; border: 0; background: none; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
 .btn svg { width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
 
-.socials { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.socials { display: flex; flex-wrap: wrap; gap: 0.85rem; }
 .social {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.95rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 0.84rem;
+  gap: 0.55rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(28, 20, 24, 0.16);
+  border-radius: 0;
+  font-size: 0.78rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--ink) !important;
   background: var(--white);
-  transition: transform 0.3s var(--ease), background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.35s var(--ease), color 0.35s ease, border-color 0.35s ease, transform 0.35s var(--ease);
 }
 .social svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
 .social .label { white-space: nowrap; }
 .social:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(28, 20, 24, 0.12);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff !important;
 }
-.social-wa { border-color: rgba(37, 211, 102, 0.4); color: #128c4a !important; }
-.social-wa:hover { background: #25d366; color: #fff !important; border-color: #25d366; }
-.social-fb { border-color: rgba(24, 119, 242, 0.35); color: #1877f2 !important; }
-.social-fb:hover { background: #1877f2; color: #fff !important; border-color: #1877f2; }
-.social-ig { border-color: rgba(193, 53, 132, 0.35); color: #c13584 !important; }
-.social-ig:hover { background: #c13584; color: #fff !important; border-color: #c13584; }
-.social-g { border-color: rgba(234, 67, 53, 0.35); color: #ea4335 !important; }
-.social-g:hover { background: #ea4335; color: #fff !important; border-color: #ea4335; }
-.social-call { border-color: rgba(168, 84, 106, 0.35); color: var(--accent) !important; }
-.social-call:hover { background: var(--accent); color: #fff !important; border-color: var(--accent); }
+.social-wa,
+.social-fb,
+.social-ig,
+.social-g,
+.social-call {
+  border-color: rgba(28, 20, 24, 0.16);
+  color: var(--ink) !important;
+}
+.social-wa:hover,
+.social-fb:hover,
+.social-ig:hover,
+.social-g:hover,
+.social-call:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff !important;
+}
 
 .loc-copy .social {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.35);
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
   color: #fff !important;
 }
-.loc-copy .social:hover {
+.loc-copy .social:hover,
+.loc-copy .social-wa:hover,
+.loc-copy .social-fb:hover,
+.loc-copy .social-ig:hover,
+.loc-copy .social-g:hover,
+.loc-copy .social-call:hover {
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff !important;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
 }
-.loc-copy .social-wa:hover { background: #25d366; border-color: #25d366; }
-.loc-copy .social-fb:hover { background: #1877f2; border-color: #1877f2; }
-.loc-copy .social-ig:hover { background: #c13584; border-color: #c13584; }
-.loc-copy .social-g:hover { background: #ea4335; border-color: #ea4335; }
-.loc-copy .social-call:hover { background: var(--accent); border-color: var(--accent); }
 
 .site-foot .foot-connect { margin-top: 1.4rem; }
 .site-foot .foot-connect-title {
