@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923165204697';
+  var wa = 'https://wa.me/923113357779';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -76,7 +76,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Smile Line Dental Clinic,',
+        'Assalam o Alaikum Vision & Health Medics,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
