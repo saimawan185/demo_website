@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/923085655885';
+  var wa = 'https://wa.me/923215125726';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -76,7 +76,7 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Assalam o Alaikum Derma Care,',
+        'Assalam o Alaikum Dr. Sadia Clinic,',
         'I would like to book an appointment.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),

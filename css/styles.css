@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap');
 
 :root {
-  --snow: #f7f2f3;
+  --snow: #f3f6f4;
   --white: #ffffff;
-  --mist: #ead9dd;
-  --ink: #1c1418;
-  --ink-soft: #5a454c;
-  --mute: #8a7379;
-  --line: rgba(28, 20, 24, 0.1);
-  --accent: #a8546a;
-  --accent-deep: #823f51;
-  --accent-soft: #f3dde3;
+  --mist: #d7e5dc;
+  --ink: #15201b;
+  --ink-soft: #44574d;
+  --mute: #6f8278;
+  --line: rgba(21, 32, 27, 0.1);
+  --accent: #2f6b56;
+  --accent-deep: #235344;
+  --accent-soft: #dcebe3;
   --wa: #25d366;
   --fb: #1877f2;
   --ig: #c13584;
   --gmaps: #ea4335;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Figtree', sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --header-h: 4.25rem;
 }
@@ -26,9 +26,9 @@ html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(1100px 520px at 8% -8%, rgba(168, 84, 106, 0.14), transparent 55%),
-    radial-gradient(800px 480px at 100% 0%, rgba(243, 221, 227, 0.9), transparent 50%),
-    linear-gradient(180deg, #f0e4e7 0%, var(--snow) 30%, var(--snow) 100%);
+    radial-gradient(1100px 520px at 8% -8%, rgba(47, 107, 86, 0.12), transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, rgba(220, 235, 227, 0.95), transparent 50%),
+    linear-gradient(180deg, #e8f0eb 0%, var(--snow) 30%, var(--snow) 100%);
   background-attachment: fixed;
   color: var(--ink);
   line-height: 1.6;
@@ -79,7 +79,7 @@ button { cursor: pointer; border: 0; background: none; }
   border-radius: 0.35rem;
   transition: transform 0.35s var(--ease), background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(168, 84, 106, 0.18); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(47, 107, 86, 0.18); }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--accent-deep); }
 .btn-ghost {
@@ -310,7 +310,7 @@ button { cursor: pointer; border: 0; background: none; }
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #f0b8c4;
+  color: #9ec9b4;
   margin-bottom: 0.65rem;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
@@ -613,7 +613,7 @@ button { cursor: pointer; border: 0; background: none; }
 }
 .loc-copy .display { color: #fff; margin: 0.4rem 0 0.75rem; }
 .loc-copy > a,
-.loc-copy p > a { color: #f0b8c4; }
+.loc-copy p > a { color: #9ec9b4; }
 .loc-copy > a:hover,
 .loc-copy p > a:hover { color: #fff; }
 .loc-map {
@@ -630,7 +630,7 @@ button { cursor: pointer; border: 0; background: none; }
 }
 
 .cta-band {
-  background: linear-gradient(135deg, #823f51, #a8546a 55%, #c06b80);
+  background: linear-gradient(135deg, #1e4639, #2f6b56 55%, #4a8f74);
   color: #fff;
   padding: 3.5rem 0;
   position: relative;
@@ -777,7 +777,7 @@ button { cursor: pointer; border: 0; background: none; }
 
 /* Footer — matched to demo_website_1 layout */
 .site-foot {
-  background: #140e11;
+  background: #101814;
   color: rgba(255, 255, 255, 0.78);
   padding: 4rem 0 2rem;
 }
@@ -797,7 +797,7 @@ button { cursor: pointer; border: 0; background: none; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #f0b8c4;
+  color: #9ec9b4;
 }
 .foot-brand p {
   max-width: 28rem;
@@ -825,7 +825,7 @@ button { cursor: pointer; border: 0; background: none; }
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #f0b8c4;
+  color: #9ec9b4;
   margin-bottom: 1.1rem;
 }
 .foot-grid ul { display: grid; gap: 0.65rem; }
@@ -922,7 +922,7 @@ button { cursor: pointer; border: 0; background: none; }
     margin: 0;
     z-index: 110;
     box-sizing: border-box;
-    background: #f7f2f3;
+    background: #eef4f0;
     flex-direction: column;
     align-items: stretch;
     padding: calc(var(--header-h) + 1.25rem) 1.5rem max(1.5rem, env(safe-area-inset-bottom));
