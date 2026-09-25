@@ -493,26 +493,27 @@ button { cursor: pointer; border: 0; background: none; }
 }
 .service-card img {
   width: 100%;
-  height: 190px;
+  height: 210px;
   object-fit: cover;
+  display: block;
+  background: var(--mist);
   transition: transform 0.6s var(--ease);
 }
 .service-card:hover img { transform: scale(1.06); }
-.service-card .body { padding: 1.2rem 1.25rem 1.35rem; }
+.service-card .body { padding: 1.25rem 1.35rem 1.45rem; }
 .service-card h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  margin-bottom: 0.35rem;
+  font-size: 1.35rem;
+  margin: 0.35rem 0 0.4rem;
 }
-.service-card p { color: var(--ink-soft); font-size: 0.92rem; }
+.service-card p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.55; }
 .service-card .fee {
   display: inline-block;
-  margin-top: 0.75rem;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-deep);
+  color: var(--accent);
 }
 
 .process {
@@ -546,24 +547,30 @@ button { cursor: pointer; border: 0; background: none; }
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
-.quote {
+.quote,
+.reviews-duo blockquote {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   padding: 1.5rem 1.35rem;
   transition: transform 0.35s var(--ease), box-shadow 0.35s ease;
 }
-.quote:hover {
+.quote:hover,
+.reviews-duo blockquote:hover {
   transform: translateY(-4px);
   box-shadow: 0 14px 30px rgba(47, 107, 86, 0.1);
 }
-.quote p {
+.quote p,
+.reviews-duo blockquote p {
   font-family: var(--font-display);
   font-size: 1.15rem;
   line-height: 1.45;
   margin-bottom: 1rem;
 }
-.quote cite {
+.quote cite,
+.quote footer,
+.reviews-duo blockquote footer,
+.reviews-duo blockquote cite {
   font-style: normal;
   font-size: 0.85rem;
   font-weight: 600;
@@ -655,8 +662,11 @@ button { cursor: pointer; border: 0; background: none; }
 .cta-band .display { color: #fff; margin: 0.4rem 0 0.75rem; }
 
 .page-hero {
-  padding: 3.5rem 0 2rem;
+  padding: 3.75rem 0 2.25rem;
   border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(700px 280px at 0% 0%, rgba(47, 107, 86, 0.1), transparent 60%),
+    linear-gradient(180deg, rgba(220, 235, 227, 0.55), transparent);
 }
 .page-hero .display { margin: 0.4rem 0 0.75rem; }
 
@@ -669,30 +679,35 @@ button { cursor: pointer; border: 0; background: none; }
   position: relative;
   border-radius: 0.45rem;
   overflow: hidden;
-  min-height: 200px;
+  min-height: 220px;
   background: var(--mist);
 }
 .gallery-grid figure:nth-child(1) {
   grid-column: span 2;
   grid-row: span 2;
-  min-height: 420px;
+  min-height: 460px;
+}
+.gallery-grid figure:nth-child(6) {
+  grid-column: span 2;
+  min-height: 240px;
 }
 .gallery-grid img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   min-height: inherit;
+  display: block;
   transition: transform 0.6s var(--ease);
 }
 .gallery-grid figure:hover img { transform: scale(1.06); }
 .gallery-grid figcaption {
   position: absolute;
-  left: 0.85rem;
-  bottom: 0.75rem;
+  inset: auto 0 0 0;
+  padding: 2.25rem 0.9rem 0.85rem;
+  background: linear-gradient(transparent, rgba(16, 24, 20, 0.78));
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 700;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .contact-grid {
@@ -725,35 +740,38 @@ button { cursor: pointer; border: 0; background: none; }
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 0.55rem;
-  padding: 1.5rem;
-  box-shadow: 0 16px 40px rgba(28, 20, 24, 0.06);
+  padding: 1.75rem 1.6rem;
+  box-shadow: 0 16px 40px rgba(21, 32, 27, 0.07);
 }
 .form-panel .row2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.85rem;
 }
-.field { margin-bottom: 0.85rem; }
+.field { margin-bottom: 1rem; }
 .field label {
   display: block;
   font-size: 0.78rem;
   font-weight: 700;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   color: var(--ink-soft);
 }
 .field input, .field select, .field textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 0.35rem;
-  padding: 0.75rem 0.85rem;
+  padding: 0.8rem 0.9rem;
   background: var(--snow);
   color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .field input:focus, .field select:focus, .field textarea:focus {
-  outline: 2px solid var(--accent-soft);
+  outline: none;
   border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .field textarea { min-height: 110px; resize: vertical; }
+.field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--mute) 50%), linear-gradient(135deg, var(--mute) 50%, transparent 50%); background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 12px) calc(50% - 2px); background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; }
 .form-ok {
   display: none;
   margin-top: 0.85rem;
@@ -910,7 +928,8 @@ button { cursor: pointer; border: 0; background: none; }
   .foot-grid { gap: 2rem; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid figure:nth-child(n) { grid-column: span 1; grid-row: auto; min-height: 200px; }
-  .gallery-grid figure:nth-child(1) { grid-column: span 2; min-height: 260px; }
+  .gallery-grid figure:nth-child(1),
+  .gallery-grid figure:nth-child(6) { grid-column: span 2; min-height: 260px; }
   .burger { display: grid; }
   .nav {
     position: fixed;
