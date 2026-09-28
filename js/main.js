@@ -76,8 +76,8 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Hello Ujinni\'s Hair Clinique,',
-        'I would like to book an appointment.',
+        'Hello Excel Events,',
+        'I would like to enquire about booking.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
         'Phone: ' + String(data.get('phone') || '').trim(),
