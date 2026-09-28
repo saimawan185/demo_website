@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/2348027003528';
+  var wa = 'https://wa.me/2348037231491';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
