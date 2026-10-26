@@ -4,7 +4,7 @@
   var menu = document.querySelector('.nav');
   var row = document.querySelector('.site-head-row');
   var form = document.getElementById('booking-form');
-  var wa = 'https://wa.me/2348037231491';
+  var wa = 'https://wa.me/2349091489867';
   var mq = window.matchMedia('(max-width: 960px)');
 
   function placeNav() {
@@ -76,8 +76,8 @@
       e.preventDefault();
       var data = new FormData(form);
       var msg = [
-        'Hello Excel Events,',
-        'I would like to enquire about booking.',
+        'Hello Bake & Brew,',
+        'I would like to place an order.',
         '',
         'Name: ' + String(data.get('name') || '').trim(),
         'Phone: ' + String(data.get('phone') || '').trim(),
